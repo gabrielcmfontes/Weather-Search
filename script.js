@@ -6,8 +6,6 @@ const weatherDetails = document.querySelector(".weather-details");
 const error404 = document.querySelector(".not-found");
 const searchButton = document.querySelector(".search-box button");
 
-//Functions
-
 //Events
 searchButton.addEventListener("click", () => {
     const city = document.querySelector(".search-box input").value;
@@ -26,11 +24,19 @@ searchButton.addEventListener("click", () => {
         const firstCity = data.list[0]; // Pega o primeiro resultado da lista de cidades
         const cityId = firstCity.id; // Pega o ID da cidade
         console.log("ID da cidade:", cityId);
-
-        fetch(``)
+        return fetch(`http://api.openweathermap.org/data/2.5/weather?id=${cityId}&units=metric&appid=${apiKey}`);
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Erro na requisição da API de busca');
+        }
+        return response.json();
+    })
+    .then(data => {
+        const cityTemp = data.main.temp;
+        console.log(`Temperatura de ${city}: ${cityTemp}`);
     })
     .catch(error => {
         console.error('Erro:', error);
     });
-
 });
