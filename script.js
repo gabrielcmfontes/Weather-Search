@@ -1,10 +1,18 @@
 //Elements
 const apiKey = "7cc7b943033a15a91ee96a5470b01a7f";
-const container = document.querySelector(".container");
+const containerBox = document.querySelector(".container");
 const weatherBox = document.querySelector(".weather-box");
 const weatherDetails = document.querySelector(".weather-details");
 const error404 = document.querySelector(".not-found");
 const searchButton = document.querySelector(".search-box button");
+const disappear = document.getElementById("#disappear");
+
+
+const temp = document.querySelector(".temperature");
+temp.innerHTML = "Dei o  u";
+const humidity = document.querySelector(".humidity");
+const wind = document.querySelector(".wind");
+const description = document.querySelector(".description");
 
 //Events
 searchButton.addEventListener("click", () => {
@@ -13,16 +21,17 @@ searchButton.addEventListener("click", () => {
         return;
     }
 
+    weatherBox.classList.add(".disappear");
     fetch(`http://api.openweathermap.org/data/2.5/find?q=${city}&appid=${apiKey}`)
     .then(response => {
         if (!response.ok) {
             throw new Error('Erro na requisição da API');
         }
-        return response.json(); // Converte os dados recebidos para JSON
+        return response.json(); 
     })
     .then(data => {
-        const firstCity = data.list[0]; // Pega o primeiro resultado da lista de cidades
-        const cityId = firstCity.id; // Pega o ID da cidade
+        const firstCity = data.list[0];
+        const cityId = firstCity.id; 
         console.log("ID da cidade:", cityId);
         return fetch(`http://api.openweathermap.org/data/2.5/weather?id=${cityId}&units=metric&appid=${apiKey}`);
     })
@@ -34,6 +43,8 @@ searchButton.addEventListener("click", () => {
     })
     .then(data => {
         const cityTemp = data.main.temp;
+
+
         console.log(`Temperatura de ${city}: ${cityTemp}`);
     })
     .catch(error => {
