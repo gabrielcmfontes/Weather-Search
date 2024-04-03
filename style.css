@@ -14,10 +14,10 @@ body{
     background: #06283D;
 }
 
-.container{
+#container{
     position: relative;
     width: 400px;
-    height: 605px;
+    height: 105px;
     background: #fff;
     padding: 28px 32px;
     overflow: hidden;
@@ -150,9 +150,11 @@ body{
     width: 100%;
     text-align: center;
     margin-top: 50px;
-    scale: 0;
-    opacity: 0;
-    display: none;
+}
+
+#found-text{
+    font-size: 20px;
+    font-weight: 800;
 }
 
 .not-found p{
@@ -162,10 +164,7 @@ body{
     margin-top: 12px;
 }
 
-.weather-box, .weather-details{
-    scale: 0;
-    opacity: 0;
-}
+
 
 .fadeIn{
     animation: 0.5s fadeIn forwards;
