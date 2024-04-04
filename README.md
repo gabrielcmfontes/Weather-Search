@@ -39,3 +39,6 @@ This project was inspired by existing weather application projects and utilizes 
 This project is licensed under the [MIT License](LICENSE).
 
 ## Screenshots:
+![Screenshot 1](img/default.png)
+![Screenshot 2](img/BH.png)
+![Screenshot 3](img/InvalidLocation.png)
