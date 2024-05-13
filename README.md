@@ -19,9 +19,10 @@ This project is a front-end application that utilizes the OpenWeather API to fet
 ## Installation:
 1. Clone the repository to your local machine:
 ```git clone https://github.com/your_username/weather-app.git```
-2. Navigate to the project directory:
+2. Change the key in `script.js` to your OpenWeather API key
+3. Navigate to the project directory:
 ```cd Weather-Search```
-3. Open `index.html` in your preferred web browser.
+4. Open `index.html` in your preferred web browser.
 
 ## Usage:
 1. Open the application in your web browser.
@@ -34,9 +35,6 @@ This project was inspired by existing weather application projects and utilizes 
 
 - **Font Awesome:** [https://fontawesome.com/](https://fontawesome.com/)
 - **OpenWeather API:** [https://openweathermap.org/api](https://openweathermap.org/api)
-
-## License:
-This project is licensed under the [MIT License](LICENSE).
 
 ## Screenshots:
 ![Screenshot 1](img/default.png)
