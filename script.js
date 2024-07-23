@@ -1,5 +1,5 @@
 //Elements
-const apiKey = "";
+const apiKey = "4f436d88133c49643ad12e892f0f2084";
 const containerBox = document.getElementById("container");
 const weatherBox = document.querySelector(".weather-box");
 const weatherDetails = document.querySelector(".weather-details");
